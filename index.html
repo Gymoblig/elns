@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ELNS - Prvá priebežná písomka</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+            color: #e0e0e0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #00d9ff;
+            text-align: center;
+            padding: 30px;
+            background: rgba(0, 217, 255, 0.1);
+            border-radius: 10px;
+            border: 2px solid #00d9ff;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #ff6b35;
+            border-bottom: 2px solid #ff6b35;
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+
+        h3 {
+            color: #ffaa00;
+            margin-top: 25px;
+        }
+
+        .formula {
+            background: rgba(0, 0, 0, 0.5);
+            border-left: 4px solid #00ff88;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            color: #00ff88;
+        }
+
+        .graph {
+            background: rgba(255, 170, 0, 0.1);
+            border: 2px solid #ffaa00;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+            border-radius: 5px;
+            min-height: 100px;
+        }
+
+        .graph img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .info {
+            background: rgba(0, 217, 255, 0.1);
+            border-left: 4px solid #00d9ff;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .value {
+            background: rgba(255, 107, 53, 0.3);
+            border: 1px solid #ff6b35;
+            padding: 3px 10px;
+            border-radius: 3px;
+            color: #ffaa00;
+            font-weight: bold;
+        }
+
+        ul {
+            margin: 10px 0;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        .tips {
+            background: rgba(255, 170, 0, 0.15);
+            border: 2px solid #ffaa00;
+            padding: 20px;
+            margin-top: 40px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>⚡ ELNS - PRVÁ PRIEBEŽNÁ PÍSOMKA ⚡</h1>
+
+    <!-- TEMA 1 -->
+    <h2>1. MERANIE ODPORU A DELIČ NAPÄTIA</h2>
+
+    <h3>Schéma zapojenia deliča napätia</h3>
+    <div class="graph">
+        <img src="img/delic_napatia.png" alt="Schéma deliča napätia"> 
+    </div>
+
+    <h3>Vzťahy pre výpočet</h3>
+
+    <div class="formula">
+        <strong>Prúd obvodom:</strong><br>
+        <img src="img/1_prud_obvodom.png" alt="Vzťah pre prúd obvodom">
+    </div>
+
+    <div class="formula">
+        <strong>Výstupné napätie:</strong><br>
+        <img src="img/1_vystupne_napatie_vzorec.png" alt="Vzťah pre výstupné napätie">
+    </div>
+
+    <div class="formula">
+        <strong>Vstupné napätie:</strong><br>
+        <img src="img/1_vstupne_napatie.png" alt="Vzťah pre vstupné napätie">
+    </div>
+
+    <!-- TEMA 2 -->
+    <h2>2. PASÍVNE PRVKY A FREKVENČNÉ FILTRE</h2>
+
+    <h3>🔽 DP FILTER (Dolnopriepustný)</h3>
+
+    <div class="graph">
+        <img src="img/dp_filter_schema.png" alt="Schéma DP filtra">
+    </div>
+
+    <div class="info">
+        <strong>Pri medznej frekvencii fc:</strong>
+        <ul>
+            <li>Pokles amplitúdy: <span class="value">-3 dB (0.707×)</span></li>
+            <li>Fázový posun: <span class="value">-45°</span></li>
+        </ul>
+    </div>
+
+    <div class="info">
+        <strong>Pri f ≪ fc:</strong> Signál prechádza (amplitúda ≈ 1, fáza ≈ 0°)
+    </div>
+
+    <div class="info">
+        <strong>Pri f ≫ fc:</strong> Signál je utlmený (amplitúda → 0, fáza → -90°)
+    </div>
+
+    <div class="graph">
+        <img src="img/dp_filter_charakteristika.png" alt="Amplitúdová a fázová charakteristika DP"> 
+    </div>
+
+    <div class="graph">
+        <img src="img/dp_filter_casovy_priebeh.png" alt="Časový priebeh DP filtra"> 
+    </div>
+
+    <h3>🔼 HP FILTER (Hornopriepustný)</h3>
+
+    <div class="graph">
+         <img src="img/hp_filter_schema.png" alt="Schéma HP filtra"> 
+    </div>
+
+    <div class="info">
+        <strong>Pri medznej frekvencii fc:</strong>
+        <ul>
+            <li>Pokles amplitúdy: <span class="value">-3 dB (0.707×)</span></li>
+            <li>Fázový posun: <span class="value">+45°</span></li>
+        </ul>
+    </div>
+
+    <div class="info">
+        <strong>Pri f ≪ fc:</strong> Signál je utlmený (amplitúda → 0, fáza → +90°)
+    </div>
+
+    <div class="info">
+        <strong>Pri f ≫ fc:</strong> Signál prechádza (amplitúda ≈ 1, fáza ≈ 0°)
+    </div>
+
+    <div class="graph">
+         <img src="img/hp_filter_charakteristika.png" alt="Amplitúdová a fázová charakteristika HP"> 
+    </div>
+
+    <div class="graph">
+         <img src="img/hp_filter_casovy_priebeh.png" alt="Časový priebeh HP filtra"> 
+    </div>
+
+    <h3>Vzťahy pre oba filtre</h3>
+
+    <div class="formula">
+        <strong>Medzná frekvencia:</strong><br>
+        <img src="img/2_medzna_frekvencia.png" alt="Vzťah pre medznú frekvenciu">
+    </div>
+
+    <div class="formula">
+        <strong>Časová konštanta:</strong><br>
+        <img src="img/2_casova_konstanta.png" alt="Vzťah pre časovú konštantu">
+    </div>
+
+    <!-- TEMA 3 -->
+    <h2>3. USMERŇOVACIE DIÓDY</h2>
+
+    <h3>Typy diód a prahové napätia</h3>
+    <div class="info">
+        <ul>
+            <li>pn-dióda (Si): <span class="value">Uprah ≈ 0.7 V</span></li>
+            <li>Schottkyho dióda: <span class="value">Uprah ≈ 0.3 V</span></li>
+        </ul>
+    </div>
+
+    <div class="graph">
+        <img src="img/diody_va_charakteristika.png" alt="VA charakteristika pn a Schottkyho diódy"> 
+        <p style="color: #ffaa00;">Označenie osí: x = U [V], y = I [A]</p>
+    </div>
+
+    <h3>Vzťahy pre odpory (priepustný smer)</h3>
+
+    <div class="formula">
+        <strong>Statický odpor:</strong><br>
+        <img src="img/3_staticky_odpor.png" alt="Vzťah pre statický odpor">
+    </div>
+
+    <div class="formula">
+        <strong>Dynamický odpor:</strong><br>
+        <img src="img/3_dynamicky_odpor.png" alt="Vzťah pre dynamický odpor">
+    </div>
+
+    <h3>Jednocestný usmerňovač - bez kondenzátora</h3>
+
+    <div class="graph">
+        <img src="img/usmernovac_bez_c.png" alt="Schéma usmerňovača bez kondenzátora"> 
+    </div>
+
+    <div class="graph">
+        <img src="img/usmernovac_bez_c_priebeh.png" alt="Časový priebeh bez kondenzátora"> 
+        <p style="color: #ffaa00;">Označenie osí: x = t [s], y = U [V]</p>
+    </div>
+
+    <h3>Jednocestný usmerňovač - s kondenzátorom</h3>
+
+    <div class="graph">
+        <img src="img/usmernovac_s_c.png" alt="Schéma usmerňovača s kondenzátorom"> 
+    </div>
+
+    <div class="graph">
+         <img src="img/usmernovac_s_c_priebeh.png" alt="Časový priebeh s kondenzátorom"> 
+        <p style="color: #ffaa00;">Označenie osí: x = t [s], y = U [V]</p>
+    </div>
+
+    <!-- TEMA 4 -->
+    <h2>4. STABILIZAČNÉ DIÓDY (Zenerove)</h2>
+
+    <div class="graph">
+         <img src="img/zener_va_charakteristika.png" alt="VA charakteristika stabilizačných diód"> 
+        <p style="color: #ffaa00;">Označenie osí: x = U [V], y = I [A]</p>
+    </div>
+
+    <h3>Mechanizmy napäťového prierazu</h3>
+    <div class="info">
+        <ul>
+            <li>UZ &lt; 5 V: <span class="value">Zenerov jav</span> (tunelový efekt)</li>
+            <li>5 V &lt; UZ &lt; 7 V: <span class="value">Kombinácia</span> oboch javov</li>
+            <li>UZ &gt; 7 V: <span class="value">Lavínový prieriaz</span></li>
+        </ul>
+    </div>
+
+    <h3>Vzťahy pre odpory (záverný smer)</h3>
+
+    <div class="formula">
+        <strong>Statický odpor:</strong><br>
+        <img src="img/4_staticky_odpor.png" alt="Vzťah pre statický odpor">
+    </div>
+
+    <div class="formula">
+        <strong>Dynamický odpor:</strong><br>
+        <img src="img/4_dynamicky_odpor.png" alt="Vzťah pre dynamický odpor"> 
+    </div>
+
+    <h3>Stabilizátor napätia so Zenerovou diódou</h3>
+
+    <div class="graph">
+         <img src="img/stabilizator_schema.png" alt="Schéma stabilizátora napätia"> 
+    </div>
+
+    <h3>Vzťahy pre výpočet obvodových veličín</h3>
+
+    <div class="formula">
+        <strong>Predradný odpor:</strong><br>
+        <img src="img/4_predradny_odpor.png" alt="Vzťah pre predradný odpor">
+    </div>
+
+    <div class="formula">
+        <strong>Prúd záťažou:</strong><br>
+        <img src="img/4_prud_zatazou.png" alt="Vzťah pre prúd záťažou">
+    </div>
+
+    <div class="formula">
+        <strong>Prúd predradným odporom:</strong><br>
+        <img src="img/4_prud_predradnym.png" alt="Vzťah pre prúd predradným odporom">
+    </div>
+
+    <div class="formula">
+        <strong>Prúd diódou:</strong><br>
+        <img src="img/4_prud_diodou.png" alt="Vzťah pre prúd diódou">
+    </div>
+
+    <div class="formula">
+        <strong>Vstupné napätie:</strong><br>
+        <img src="img/4_vstupne_napatie.png" alt="Vzťah pre vstupné napätie">
+    </div>
+
+    <div class="formula">
+        <strong>Výstupné napätie:</strong><br>
+        <img src="img/4_vystupne_napatie.png" alt="Vzťah pre výstupné napätie">
+    </div>
+
+    <!-- TIPS -->
+    <div class="tips">
+        <h2>⚡ PRAKTICKÉ TIPY NA PÍSOMKU ⚡</h2>
+
+        <h3>Pamätať si základné hodnoty:</h3>
+        <ul>
+            <li>pn-dióda: <span class="value">0.7 V</span></li>
+            <li>Schottkyho: <span class="value">0.3 V</span></li>
+            <li>-3 dB = <span class="value">0.707× amplitúdy</span></li>
+            <li>Fázové posuny: <span class="value">±45° pri fc</span></li>
+        </ul>
+
+        <h3>Pri kreslení grafov:</h3>
+        <ul>
+            <li>Vždy označiť osi (x, y) s jednotkami!</li>
+            <li>Vyznačiť kľúčové body (Uprah, UZ, fc)</li>
+            <li>Ukázať správny tvar kriviek</li>
+            <li>Pre VA charakteristiky: priepustný aj záverný smer</li>
+        </ul>
+
+        <h3>Pri výpočtoch:</h3>
+        <ul>
+            <li>Začať od základných vzťahov</li>
+            <li>Vyjadriť všetky obvodové veličiny</li>
+            <li>Kontrolovať jednotky</li>
+            <li>Použiť Kirchhoffove zákony</li>
+        </ul>
+
+        <h3>Časové priebehy:</h3>
+        <ul>
+            <li>Označiť osi (t, U alebo I)</li>
+            <li>Ukázať správnu fázu a amplitúdu</li>
+            <li>Vyznačiť vzťah vstup vs. výstup</li>
+        </ul>
+
+        <div class="info" style="margin-top: 20px; border-color: #ff0055;">
+            <strong>⚠️ DÔLEŽITÉ:</strong> Pri stabilizačnej dióde pracujeme v závernom smere!
+        </div>
+    </div>
+
+</body>
+</html>
